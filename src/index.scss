@@ -1,0 +1,25 @@
+@import "~bootstrap/scss/bootstrap";
+
+.center {
+    justify-content: center;
+}
+
+.end {
+    justify-self: flex-end;
+    padding-left: 350px;
+
+}
+
+.bread {
+    --bs-breadcrumb-divider: '>';
+}
+
+.bell-icon {
+    width: 20px;
+    height: 20px;
+    color: grey;
+}
+
+.img1 {
+    width: 200px;
+}
