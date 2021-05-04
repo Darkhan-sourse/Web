@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { ReactComponent as BellIcon } from '../icons/bell.svg';
 
-const Users = () => {
-
+const Posts = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [items, setItems] = useState([])
@@ -22,18 +22,21 @@ const Users = () => {
     }, [])
 
     const usersComp = items.map(item => (
-                        <div class="card" key={item.id}>
-                            <div class="card-body">
-                            {item.author}
-                            </div>
-                        </div>
-                        ))
-
-    return (
-        <div>
-            { isLoading ? (<h1>Loading...</h1>) : usersComp }
+        <div class="card">
+            <div class="card-header">
+                <BellIcon className="bell-icon"/> { item.title }
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p>{ item.body }</p>
+                <footer class="blockquote-footer"><cite title="Source Title">{ item.author }</cite></footer>
+                </blockquote>
+            </div>
         </div>
+        )
     )
+
+    return isLoading ? (<h1>Loading...</h1>) : usersComp
 }
 
-export default Users
+export default Posts

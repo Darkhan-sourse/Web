@@ -6,6 +6,8 @@ import Users from './pages/Users'
 import Navbar from './components/Navbar'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Addpost from './pages/Addpost'
+import ReadSinglel from './pages/ReadSingle'
 
 function App() {
     return (
@@ -15,7 +17,9 @@ function App() {
             <Navbar />
                 <Switch>
                     <Route path="/" exact component={Home} />
+                    <Route path="/addpost" exact component={Addpost} />
                     <Route path="/users" exact component={Users} />
+                    <Route path="/readsingle" exact component={ReadSinglel} />
                     <Route path="/login" exact component={Login} />
                     <Route path="/register" exact component={Register} />
                 </Switch>
